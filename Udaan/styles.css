@@ -1,0 +1,14 @@
+.cell {
+    width: 3em;
+    height: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+.highlight{
+    background-color: yellow;
+    width: 3em;
+    height: 3em;
+    border: 1px solid black;
+    opacity: 0.8;
+}
