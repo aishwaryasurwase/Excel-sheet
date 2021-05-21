@@ -12,19 +12,19 @@ function cellClicked(event) {
     selectedCell.className = 'highlight';
 
     if (val.startsWith('SUM') || val.startsWith('sum')) {
-        console.log("val", val);
         selectedCell.value = 0;
         let valSplit = val.split(': ')
-        // 00 01
-        let num1 = document.getElementById(valSplit[1]).value;
-        let num2 = document.getElementById(valSplit[2]).value;
-        // console.log(" NUM 1 ", num1, "Num2 ", num2);
 
+        let num1 = +document.getElementById(valSplit[1]).value;
+        let num2 = +document.getElementById(valSplit[2]).value;
+
+        if (isNaN(num1)) {
+            num1 = 0
+        }
+        if (isNaN(num2)) {
+            num2 = 0;
+        }
         document.getElementById(id).value = Number(num1) + Number(num2);
-    } else if (typeof val === 'number') {
-        selectedCell.value = updatedVal;
-    } else if (isNaN(updatedVal)) {
-        selectedCell.value = 0;
     }
 }
 
